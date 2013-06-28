@@ -7,10 +7,10 @@ ob_start();
 //ERROR_REPORTING(0);
 
 // MySQL
-$db_user = 'db_user'; // Gebruiker voor MySQL
-$db_pass = 'db_pass'; // Wachtwoord voor MySQL
+$db_user = 'xenonhd_ota'; // Gebruiker voor MySQL
+$db_pass = 'teamhorizon'; // Wachtwoord voor MySQL
 $db_host = 'localhost'; // Host voor MySQL; standaard localhost
-$db_db = 'romupdater'; // Database
+$db_db = 'xenonhd_otaupdatecenter'; // Database
 
 // Als je al ergens anders een database connectie hebt gemaakt,
 // maak dan van de volgende twee regels commentaar (# of // ervoor zetten)
@@ -19,10 +19,10 @@ $db = new mysqli($db_host, $db_user, $db_pass, $db_db);
 // Instellingen
 $loginpage = '?page=list-roms'; // Pagina waar de gebruiker heen wordt gestuurd wanneer deze is ingelogd
 $sitenaam = 'OTA-Service'; // Naam van je site; deze word oa. gebruikt bij het verzenden van mail
-$sitemail = 'noreplay@otaupdatecenter.pro'; // Afzender van verzonden mail
-$sitebaseurl = 'https://otaupdatecenter.pro/';
+$sitemail = 'teamhorizon14@gmail.com'; // Afzender van verzonden mail
+$sitebaseurl = 'https://xenonhd.com';
 $sitesalt = 'supersecretlongsalt - replace on install';
-$gcmapikey = 'GCM_API_KEY';
-$recaptcha_pubkey = 'public recapcha key';
-$recaptcha_privkey = 'private recapcha key';
+$gcmapikey = 'AIzaSyADHyPc7UcUKjOTqRzyr-nozBlx5siiO2Y';
+$recaptcha_pubkey = '6LfZeeMSAAAAAHMTBsgINPebE2_7iFYE82W_FTzG';
+$recaptcha_privkey = '6LfZeeMSAAAAAE7USSqe6PMDxRQXllQdwg_8LjjJ';
 ?>

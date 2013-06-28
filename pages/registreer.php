@@ -27,21 +27,26 @@ if (!isset($_SESSION['user_id'])) {
                 $stmt->close();
 
                 if ($tellen == 0) {
-                    // E-mailcheck
+  
+                  // E-mailcheck
                     if (preg_match('/^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,6}$/i', $_POST['registreer_email'])) {
                         // Email correct
                         if ($_POST['registreer_pass1'] == $_POST['registreer_pass2']) {
                             $actcode = mt_srand((double) microtime()*100000);
                             while (strlen($actcode) <= 10) {
                                 $i = chr(mt_rand (0,255));
-                                if (eregi('^[a-z0-9]$', $i)) {
+                                if (preg_match('/^[a-z0-9]$/', $i)) {
                                     $actcode = $actcode.$i;
                                 }
                             }
                             $usersalt = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
                             $hashpass = $usersalt.hash('sha256', $sitesalt.$_POST['registreer_pass1'].$_POST['registreer_user'].$usersalt);
                             $stmt = $db->stmt_init();
-                            $stmt->prepare('INSERT INTO `gebruikers` (`naam`, `wachtwoord`, `status`, `email`, `actief`, `actcode`) VALUES (?, ?, 0, ?, 0, ?)');
+			    echo $actcode;
+			    $sqlline = 'INSERT INTO `gebruikers` (`naam`, `wachtwoord`, `status`, `email`, `actief`, `actcode`) VALUES (?, ?, 0, ?, 0, ?)';
+                            echo $sqlline;
+			    $stmt->prepare($sqlline);
+                            //$stmt->prepare('INSERT INTO `gebruikers` (`naam`, `wachtwoord`, `status`, `email`, `actief`, `actcode`) VALUES (?, ?, 0, ?, 0, ?)');
                             $stmt->bind_param('ssss', $_POST['registreer_user'], $hashpass, $_POST['registreer_email'], $actcode);
 
                             if ($stmt->execute()) {

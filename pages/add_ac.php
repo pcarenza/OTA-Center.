@@ -11,15 +11,15 @@ if (isset($_SESSION['user_id'])) {
         echo '<br />';
         echo '<a href="?page=list-roms">View result</a>';
 
-        $stmt = $db->stmt_init();
-        $stmt->prepare('SELECT `reg_id` FROM `ota_devices` WHERE `romid` = ? AND `device` = ? UNION SELECT `reg_id` FROM `ota_devices2` WHERE `romid` = ? AND `device` = ?');
-        $stmt->bind_param('ssss', $_POST['romid'], $_POST['device'], $_POST['romid'], $_POST['device']);
-        $stmt->execute();
-        $stmt->bind_result($regid);
+        $stmt2 = $db->stmt_init();
+        $stmt2->prepare('SELECT `reg_id` FROM `ota_devices` WHERE `romid` = ? AND `device` = ? UNION SELECT `reg_id` FROM `ota_devices2` WHERE `romid` = ? AND `device` = ?');
+        $stmt2->bind_param('ssss', $_POST['romid'], $_POST['device'], $_POST['romid'], $_POST['device']);
+        $stmt2->execute();
+        $stmt2->bind_result($regid);
 
         $regids = array();
-        while ($stmt->fetch()) $regids[] = $regid;
-        $stmt->close();
+        while ($stmt2->fetch()) $regids[] = $regid;
+        $stmt2->close();
 
         if (!empty($regids)) {
             $ch = curl_init('https://android.googleapis.com/gcm/send');
