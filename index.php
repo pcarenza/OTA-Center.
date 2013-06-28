@@ -34,7 +34,6 @@ $allowed_url = array( //this is our array of allowed requests
     'userdel_ac',
     'useradd',
     'useradd_ac',
-    'registreer',
     'activeren',
     'update',
     'update_ac',
@@ -82,7 +81,6 @@ $page = $_GET['page']; //sets the page variable from http request
                                 </ul>
                             </li>
                         <? } else { ?>
-                            <li><a href="?page=registreer">Register</a></li>
                         <? } ?>
                         <? if (isset($_SESSION['user_status']) && $_SESSION['user_status'] == 1) { ?>
                             <li>
