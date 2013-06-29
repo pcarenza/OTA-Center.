@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>OTA Update Center</title>
-
-    <meta name="description" content="Over The Air Rom Update Center." />
-    <meta name="keywords" content="OTA, Over The Air, Rom, Update, Center, Android, XDA, Custom, Roms, AOSP, Sense, Updater, Admin, App, Online Updates" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
-    <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
-    <script type="text/javascript" src="js/_ajax.new.js?<?=rand()?>"></script>
-    <script type="text/javascript" src="js/_formdata2querystring.js"></script>
-    <!--<script type="text/javascript" src="js/_applogin.js?<?=rand()?>"></script>-->
-    <script type="text/javascript" src="js/infieldlabels.js"></script>
-
-</head>
 <?php
 include 'pages/config.php';
 $default_url = 'pages/home.php'; //sets the default_url variable
@@ -50,6 +31,25 @@ $allowed_url = array( //this is our array of allowed requests
 
 $page = $_GET['page']; //sets the page variable from http request
 ?>
+<!DOCTYPE html>
+<html>
+<head>    <title>XenonHD OTA Update Center</title>
+
+    <meta name="description" content="Over The Air Rom Update Center." />
+    <meta name="keywords" content="OTA, Over The Air, Rom, Update, Center, Android, XDA, Custom, Roms, AOSP, Sense, Updater, Admin, App, Online Updates" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+    <!--<script type="text/javascript" src="js/_ajax.new.js?<?=rand()?>"></script>-->
+    <script type="text/javascript" src="js/_formdata2querystring.js"></script>
+    <!--<script type="text/javascript" src="js/_applogin.js?<?=rand()?>"></script>-->
+    <script type="text/javascript" src="js/infieldlabels.js"></script>
+
+
+</head>
 <body>
     <div id="main">
         <header>

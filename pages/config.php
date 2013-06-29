@@ -20,7 +20,7 @@ $db = new mysqli($db_host, $db_user, $db_pass, $db_db);
 $loginpage = '?page=list-roms'; // Pagina waar de gebruiker heen wordt gestuurd wanneer deze is ingelogd
 $sitenaam = 'OTA-Service'; // Naam van je site; deze word oa. gebruikt bij het verzenden van mail
 $sitemail = 'teamhorizon14@gmail.com'; // Afzender van verzonden mail
-$sitebaseurl = 'https://xenonhd.com';
+$sitebaseurl = 'https://xenonhd.com/otaupdater/ota';
 $sitesalt = 'supersecretlongsalt - replace on install';
 $gcmapikey = 'AIzaSyADHyPc7UcUKjOTqRzyr-nozBlx5siiO2Y';
 $recaptcha_pubkey = '6LfZeeMSAAAAAHMTBsgINPebE2_7iFYE82W_FTzG';
